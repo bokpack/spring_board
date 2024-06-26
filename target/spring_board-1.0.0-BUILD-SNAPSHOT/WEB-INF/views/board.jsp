@@ -13,12 +13,30 @@
 </head>
 <body>
 <h1>게시물읽기</h1>
-<form>
-    <input type="text" name="bno" value="${boardDto.bno}">
-    <input type="text" name="title" value="${boardDto.title}">
-    <input type="text" name="writer" value="${boardDto.writer}">
-    <input type="text" name="content" value="${boardDto.content}">
-</form>
+<form action="<c:url value="board/write"/>" id="form" method="post">
+    <input type="hidden" name="bno" value="${boardDto.bno}"  >
+    <input type="text" name="title" value="${boardDto.title}" readonly placeholder="제목">
+    <input type="text" name="writer" value="${boardDto.writer}" readonly placeholder="작성자">
+    <textarea  name="content" value="${boardDto.content}" readonly placeholder="내용"></textarea>
 
+</form>
+<button type="button" id="writeBtn" class="btn">글쓰기</button>
+<button type="button" id="listBtn" class="btn">목록</button>
+<script>
+document.getElementById('listBtn').addEventListener('click',function (){
+window.location.href = '<c:url value="/board/list"/>'
+    })
+
+    document.getElementById('writeBtn').addEventListener('click', function (){
+    // if(!confirm("글을 등록하시겠습니까?")) return;
+
+    let form = document.getElementById('form');
+    form.action = '<c:url value="/board/write"/>';
+    form.method = 'post';
+    form.submit();
+    })
+
+    </script>
 </body>
+
 </html>
