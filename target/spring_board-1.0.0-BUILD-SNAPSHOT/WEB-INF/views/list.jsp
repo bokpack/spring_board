@@ -6,6 +6,7 @@
 
 <html>
 <head>
+
     <title>게시판</title>
 </head>
 <body>
@@ -24,7 +25,7 @@
         <c:forEach items="${list}" var="boardDto">
         <tr>
             <td><c:out value="${boardDto.bno}"/></td>
-            <td><a class="title-link" href="<c:url value='/board/read?bno=${boardDto.bno}'/>"></a><c:out value="${boardDto.title}"/></td>
+            <td><a class="title-link" href="<c:url value='/board/read?bno=${boardDto.bno}'/>"><c:out value="${boardDto.title}" /></a></td>
             <td><c:out value="${boardDto.writer}"/></td>
             <td><fmt:formatDate pattern="yyyy.MM.dd" value="${boardDto.reg_date}"/></td>
         </tr>
