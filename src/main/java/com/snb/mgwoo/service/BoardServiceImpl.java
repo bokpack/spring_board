@@ -23,19 +23,21 @@ public class BoardServiceImpl implements BoardService {
         return boardDao.insert(boardDto);
     }
 
-    @Override
-    public int remove(Integer bno) throws Exception {
-        return boardDao.delete(bno);
-    }
-
-    @Override
-    public int update(BoardDto boardDto) throws Exception {
-        return boardDao.update(boardDto);
-    }
 
     @Override
     public List<BoardDto> getList() throws Exception {
         return boardDao.selectAll();
     }
+
+    @Override
+    public int delete(Integer bno) throws Exception {
+        return boardDao.delete(bno);
+    }
+
+    @Override
+    public int modify(BoardDto dto) throws Exception {
+        return boardDao.update(dto);
+    }
+
 
 }

@@ -9,9 +9,9 @@ public interface BoardService {
 
     int write(BoardDto boardDto) throws Exception;
 
-    int remove(Integer bno) throws Exception;
+    int delete(Integer bno) throws Exception;
 
-    int update(BoardDto boardDto) throws Exception;
+    int modify(BoardDto boardDto) throws Exception;
 
     List<BoardDto> getList() throws Exception;
 }
