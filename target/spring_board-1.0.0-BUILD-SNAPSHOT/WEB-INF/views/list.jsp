@@ -40,9 +40,10 @@
         .button-container {
             display: flex;
             justify-content: flex-end;
+            margin-bottom: 12px;
         }
         .button-container button {
-            padding: 10px 20px;
+            padding: 8px 18px;
             margin-left: 10px;
             background-color: salmon;
             color: white;
@@ -52,13 +53,13 @@
             transition: background-color 0.3s;
         }
         .button-container button:hover {
-            background-color: #0056b3;
+            background-color: green;
         }
         .button-container button:focus {
             outline: none;
         }
         .title-link {
-            color: #007bff;
+            color: green;
             text-decoration: none;
         }
         .title-link:hover {
@@ -69,7 +70,7 @@
 <body>
 <div id="root">
     <div class="button-container">
-        <button type="button" id="writeBtn" onclick="location.href='<c:url value="/board/write"/>'">글쓰기sfsd</button>
+        <button type="button" id="writeBtn" onclick="location.href='<c:url value="/board/write"/>'">글쓰기</button>
     </div>
     <table>
         <thead>
